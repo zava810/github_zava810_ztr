@@ -57,7 +57,7 @@ function init() {
         for (let mutation of mutationsList) {
           if (
             mutation.type === 'childList' && mutation.target.className !== 'yunikes' && mutation.target.parentNode &&
-            mutation.target.parentNode.className.indexOf('indicen-tooltip-container') === -1
+            mutation.target.parentNode.className.indexOf('ztr-tooltip-container') === -1
           ) { for (let elem of mutation.addedNodes) { transliterate_elem_content(elem); } }
         }
       });

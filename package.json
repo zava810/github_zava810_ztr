@@ -4,7 +4,7 @@
   "description": "transliterator phur hindi bengali punjabi guzrati malayalam telugu tamil kannada oriya ",
   "private": true,
   "main": "src/scripts/background.js",
-  "repository": "https://gitlab.com/zava810/indicen",
+  "repository": "https://gitlab.com/zava810/ztr",
   "author": "viml kumar",
   "license": "GPL-3.0",
   "engines": {

@@ -1,4 +1,4 @@
-# indic-en
+# ztr
 
 a simple webextension to transliterate webpages from indic script (malayalam, hindi, kannada) to english/latin/roman script (manglish, hinglish, kanglish).
 
@@ -6,7 +6,7 @@ made with help of the awesome [web-extension-starter](https://github.com/abhijit
 
 ## usage
 
-install the extension and you'll see indic-en icon on your browser toolbar. click on it and simply click "transliterate".
+install the extension and you'll see ztr icon on your browser toolbar. click on it and simply click "transliterate".
 
 ### features
 

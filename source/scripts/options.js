@@ -1,6 +1,6 @@
 /*
  * Indic-En : WebExtension to transliterate webpages
- * https://subinsb.com/indicen
+ * https://subinsb.com/ztr
  *
  * This work is licensed under GNU General Public License version 3.
  *

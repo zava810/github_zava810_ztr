@@ -7,7 +7,7 @@
  * Date: 2017-05-31
  * ----------------
  * Modified by Subin Siby, 2020
- * 
+ *
  * Released under the MIT license
  */
 
@@ -16,8 +16,8 @@ var tooltip = null, elm_edges, tooltip_text, event_listener = null;
 var Tooltip = {
     init: function(data_attr_name) {
         tooltip = document.createElement('div')
-        tooltip.className = 'indicen-tooltip-container indicen-no-display'
-        tooltip.innerHTML = '<div class="indicen-text"></div><a class="indicen-credit" href="https://subinsb.com/indicen/" target="_blank">Indic-En</a>'
+        tooltip.className = 'ztr-tooltip-container ztr-no-display'
+        tooltip.innerHTML = '<div class="ztr-text"></div><a class="ztr-credit" href="https://subinsb.com/ztr/" target="_blank">Indic-En</a>'
         document.body.appendChild(tooltip)
 
         function showTooltip(evt) {
@@ -27,7 +27,7 @@ var Tooltip = {
         }
 
         function hideTooltip() {
-            tooltip.className = 'indicen-tooltip-container indicen-no-display';
+            tooltip.className = 'ztr-tooltip-container ztr-no-display';
             tooltip.removeAttribute('style');
         }
 
@@ -41,18 +41,18 @@ var Tooltip = {
 
             timeout = setTimeout(() => {
                 if (e.target.dataset[data_attr_name] !== undefined) {
-                    cur_highlighted = document.getElementById('indicen-highlight')
+                    cur_highlighted = document.getElementById('ztr-highlight')
                     if (cur_highlighted)
                         cur_highlighted.id = ''
 
-                    e.target.id = 'indicen-highlight'
+                    e.target.id = 'ztr-highlight'
                     showTooltip(e)
                 }
             }, 700);
 
             hide_timeout = setTimeout(() => {
-                if (e.target.className.indexOf('indicen') === -1) {
-                    cur_highlighted = document.getElementById('indicen-highlight')
+                if (e.target.className.indexOf('ztr') === -1) {
+                    cur_highlighted = document.getElementById('ztr-highlight')
                     if (cur_highlighted)
                         cur_highlighted.id = ''
 
@@ -71,11 +71,11 @@ var Tooltip = {
         // Remove no-display + set the correct classname based on the position
         // of the elm.
         if (elm_edges.left > window.innerWidth - 100) {
-            tooltip.className = 'indicen-tooltip-container indicen-tooltip-left';
+            tooltip.className = 'ztr-tooltip-container ztr-tooltip-left';
         } else if ((elm_edges.left + (elm_edges.width / 2)) < 100) {
-            tooltip.className = 'indicen-tooltip-container indicen-tooltip-right';
+            tooltip.className = 'ztr-tooltip-container ztr-tooltip-right';
         } else {
-            tooltip.className = 'indicen-tooltip-container indicen-tooltip-center';
+            tooltip.className = 'ztr-tooltip-container ztr-tooltip-center';
         }
     },
     position: function(tooltip, elm) {
@@ -112,7 +112,7 @@ var Tooltip = {
             tooltip.remove();
             document.removeEventListener('mouseover', event_listener);
 
-            let cur_highlighted = document.getElementById('indicen-highlight')
+            let cur_highlighted = document.getElementById('ztr-highlight')
             if (cur_highlighted)
                 cur_highlighted.id = ''
         }
