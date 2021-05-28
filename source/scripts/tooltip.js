@@ -17,7 +17,7 @@ var Tooltip = {
     init: function(data_attr_name) {
         tooltip = document.createElement('div')
         tooltip.className = 'ztr-tooltip-container ztr-no-display'
-        tooltip.innerHTML = '<div class="ztr-text"></div><a class="ztr-credit" href="https://subinsb.com/ztr/" target="_blank">Indic-En</a>'
+        tooltip.innerHTML = '<div class="ztr-text"></div><a class="ztr-credit" href="https://subinsb.com/ztr/" target="_blank">ztr</a>'
         document.body.appendChild(tooltip)
 
         function showTooltip(evt) {
