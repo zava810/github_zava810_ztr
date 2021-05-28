@@ -1,11 +1,11 @@
 {
-  "name": "indicen",
-  "version": "3.0.1",
-  "description": "Indic-En WebExtension",
+  "name": "ztr",
+  "version": "1.0.0",
+  "description": "transliterator phur hindi bengali punjabi guzrati malayalam telugu tamil kannada oriya ",
   "private": true,
   "main": "src/scripts/background.js",
-  "repository": "https://gitlab.com/subins2000/indicen",
-  "author": "subins2000",
+  "repository": "https://gitlab.com/zava810/indicen",
+  "author": "viml kumar",
   "license": "GPL-3.0",
   "engines": {
     "node": ">=12"
@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "advanced-css-reset": "^1.2.2",
-    "libindik-transliteration": "^1.2.10",
+    "libindik-transliteration": "^1.2.11",
     "webext-base-css": "^1.2.0",
     "webextension-polyfill": "^0.7.0"
   },

@@ -4833,10 +4833,10 @@
     "prelude-ls" "^1.2.1"
     "type-check" "~0.4.0"
 
-"libindik-transliteration@^1.2.10":
-  "integrity" "sha512-jWNENls8OwRZ+T8pTm24JYy8LWzhStf6bBGCkoQKu0nuW9nsQiiEibJ31YbJT0bjhL3WRGuh7EzlDk0oMKLI9w=="
-  "resolved" "https://registry.npmjs.org/libindik-transliteration/-/libindik-transliteration-1.2.10.tgz"
-  "version" "1.2.10"
+"libindik-transliteration@^1.2.11":
+  "integrity" "sha512-frgLxuXvTnJPkp9sfJWwX/S+puGoABxVQVhCFlrZtifz2XQXBylW4auiB2IFR/Uoy2RZMUo1sVWwX30MqJ/YXg=="
+  "resolved" "https://registry.npmjs.org/libindik-transliteration/-/libindik-transliteration-1.2.11.tgz"
+  "version" "1.2.11"
 
 "line-column@^1.0.2":
   "integrity" "sha1-0lryk2tvSEkXKzEuR5LR2Ye8NKI="
