@@ -13,30 +13,16 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const nodeEnv = process.env.NODE_ENV || 'development';
 const targetBrowser = process.env.TARGET_BROWSER;
 
-const extensionReloaderPlugin =
-  nodeEnv === 'development'
-    ? new ExtensionReloader({
-        port: 9090,
-        reloadPage: true,
-        entries: {
+const extensionReloaderPlugin = nodeEnv === 'development' ? new ExtensionReloader({ port: 9090, reloadPage: true, entries: {
           // TODO: reload manifest on update
-          contentScript: 'contentScript',
-          background: 'background',
-          extensionPage: ['popup', 'options'],
+          contentScript: 'contentScript', background: 'background', extensionPage: ['popup', 'options'],
         },
       })
-    : () => {
-        this.apply = () => {};
-      };
+    : () => { this.apply = () => {}; };
 
 const getExtensionFileType = (browser) => {
-  if (browser === 'opera') {
-    return 'crx';
-  }
-  if (browser === 'firefox') {
-    return 'xpi';
-  }
-
+  if (browser === 'opera') { return 'crx'; }
+  if (browser === 'firefox') { return 'xpi'; }
   return 'zip';
 };
 
@@ -47,19 +33,9 @@ module.exports = {
 
   stats: { all: false, builtAt: true, errors: true, hash: true, },
 
-  entry: {
-    manifest: './source/manifest.json',
-    background: './source/scripts/background.js',
-    contentScript: './source/scripts/contentScript.js',
-    popup: './source/scripts/popup.js',
-    options: './source/scripts/options.js',
-  },
-
-  output: {
-    path: path.resolve(__dirname, 'extension', targetBrowser),
-    filename: 'js/[name].bundle.js',
-  },
-
+  entry: { manifest: './source/manifest.json', background: './source/scripts/background.js',
+    contentScript: './source/scripts/contentScript.js', popup: './source/scripts/popup.js', options: './source/scripts/options.js', },
+  output: { path: path.resolve(__dirname, 'extension', targetBrowser), filename: 'js/[name].bundle.js', },
   module: {
     rules: [
       {
@@ -79,15 +55,7 @@ module.exports = {
 
         options: {
           plugins: ['syntax-dynamic-import'],
-
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                modules: false,
-              },
-            ],
-          ],
+          presets: [ [ '@babel/preset-env', { modules: false, }, ], ],
         },
       },
       {
@@ -96,12 +64,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader, // It creates a CSS file per JS file which contains CSS
           },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: nodeEnv === 'development',
-            },
-          },
+          { loader: 'css-loader', options: { sourceMap: nodeEnv === 'development', }, },
           {
             loader: 'postcss-loader',
             options: {
@@ -134,69 +97,30 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
         path.join(process.cwd(), `extension/${targetBrowser}`),
-        path.join(
-          process.cwd(),
-          `extension/${targetBrowser}.${getExtensionFileType(targetBrowser)}`
-        ),
+        path.join( process.cwd(), `extension/${targetBrowser}.${getExtensionFileType(targetBrowser)}` ),
       ],
       cleanStaleWebpackAssets: false,
       verbose: true,
     }),
     // write css file(s) to build folder
     new MiniCssExtractPlugin({filename: 'css/[name].css'}),
-    new HtmlWebpackPlugin({
-      template: 'source/options.html',
-      inject: 'body',
-      hash: true,
-      chunks: ['options'],
-      filename: 'options.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: 'source/popup.html',
-      inject: 'body',
-      hash: true,
-      chunks: ['popup'],
-      filename: 'popup.html',
-    }),
+    new HtmlWebpackPlugin({ template: 'source/options.html', inject: 'body', hash: true, chunks: ['options'], filename: 'options.html', }),
+    new HtmlWebpackPlugin({ template: 'source/popup.html', inject: 'body', hash: true, chunks: ['popup'], filename: 'popup.html', }),
     // copy static assets
-    new CopyWebpackPlugin({
-      patterns: [{from: 'source/assets', to: 'assets'}],
-    }),
+    new CopyWebpackPlugin({ patterns: [{from: 'source/assets', to: 'assets'}], }),
     // plugin to enable browser reloading in development mode
     extensionReloaderPlugin,
   ],
 
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorPluginOptions: {
-          preset: ['default', {discardComments: {removeAll: true}}],
-        },
-      }),
-      new FilemanagerPlugin({
-        events: {
-          onEnd: {
-            archive: [
+  optimization: { minimize: true, minimizer: [
+      new TerserPlugin({ parallel: true, terserOptions: { format: { comments: false, }, }, extractComments: false, }),
+      new OptimizeCSSAssetsPlugin({ cssProcessorPluginOptions: { preset: ['default', {discardComments: {removeAll: true}}], }, }),
+      new FilemanagerPlugin({ events: { onEnd: { archive: [
               {
                 format: 'zip',
                 source: path.join(__dirname, 'extension', targetBrowser),
                 destination: `${path.join(__dirname, 'extension', targetBrowser)}.${getExtensionFileType(targetBrowser)}`,
                 options: {zlib: {level: 6}},
-              },
-            ],
-          },
-        },
-      }),
-    ],
-  },
+      }, ], }, }, }),
+    ], },
 };
