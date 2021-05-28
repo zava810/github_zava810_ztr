@@ -3,11 +3,11 @@
  * https://subinsb.com/indicen
  *
  * This work is licensed under GNU General Public License version 3.
- * 
+ *
  * Copyright 2020 Subin Siby <mail@subinsb.com>
 */
 
-import Transliterator from 'libindic-transliteration';
+import transliterator from 'libindik-transliteration';
 
 import '../styles/options.scss';
 
@@ -18,15 +18,15 @@ form.onsubmit = function(e) {
     var l = document.getElementById('lang').value,
         input = document.getElementById('input').value,
         output = '',
-        t = new Transliterator();
+        t = new transliterator();
 
-    if (l === 'ml') {
-        output = t.transliterate_ml_en(input);
-    } else if (l === 'hi') {
-        output = t.transliterate_hi_en(input);
-    } else {
-        output = t.transliterate_kn_en(input);
-    }
+    // if (l === 'ml') {
+    //     output = t.transliterate_ml_en(input);
+    // } else if (l === 'hi') {
+    //     output = t.transliterate_hi_en(input);
+    // } else {
+        output = t.transliterate_indik_abc(input);
+    // }
 
     document.getElementById('output').value = output;
 

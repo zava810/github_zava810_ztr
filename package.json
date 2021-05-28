@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "advanced-css-reset": "^1.2.2",
-    "libindic-transliteration": "^1.2.0",
+    "libindik-transliteration": "^1.2.10",
     "webext-base-css": "^1.2.0",
     "webextension-polyfill": "^0.7.0"
   },
