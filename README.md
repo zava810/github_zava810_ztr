@@ -1,6 +1,41 @@
 # ztr
 
-a simple webextension to transliterate webpages from indic script (malayalam, hindi, kannada) to english/latin/roman script (manglish, hinglish, kanglish).
+a simple webextension to transliterate webpages from indic script (malayalam, hindi, kannada, tamil, telugu, punzabi, guzrati, marathi, bengali/baNgla/oriya) to zabc (hscii810).
+
+### hou to 1.clone 2.install 3.build 4.run 5.test steps :
+1. in cmd prompt run belou git clone command. it vill zenerate ztr folder vith **.git** folder inside.
+   > git clone https://gitlab.com/zava810/ztr.git
+2. install [nvm->node->npm](https://github.com/nvm-sh/nvm) & run npm install command. it vill zenerate ztr/**node_modules** folder.
+   > npm install
+3. build firefox extension by running belou **build** command. it vill zenerate ztr/**extension/[firefox , firefox.xpi]** folder tree.
+   > npm run build:firefox
+4: open firefox & type url **about:debugging#/runtime/this-firefox**
+5. click **load temporary add-on** button & select
+6. **ztr/extension/firefox/manifest.json** file.
+7. in firefox open [zee hindi](https://zeenews.india.com/hindi) in neu table
+8. in firefox extension bar click **ztr(z icon)**
+9. click **transliterate button** & check/test if translierated in zabc properply. [pliiz ping](https://linkedin.com/in/viml) phur changes needed in [libindik-transliteration](https://www.npmjs.com/package/libindik-transliteration) library.
+10. install **[u5cdot](https://github.com/Font77/unicase_phonts)** in your system(android/windows/linux/firefox)
+10. in firefox open [about:preferences](about:preferences) -&--> search fonts
+11. set default font **u5cdot & size 12**
+12. in advanced do same for :
+  1. other vriting systems
+  2. latin
+  3. hindi , malayalam , tamil , telugu etc ...
+13. **uncheck "Allow pages to select" checkbox**
+10. belou is list phur good sites to test phur languages:
+  1. [hinDi_mrathi_punzabi_guzraTi](https://zeenews.india.com/hindi)
+  1. [Tmil_niyuz](https://www.dinamalar.com/)
+  1. [mlyalm niyuz](https://www.manoramaonline.com/home.html)
+  2. [hindi food recepies](https://nishamadhulika.com/category/355-puri-recipe.html)
+  3. [bbc hindi](https://www.bbc.com/hindi)
+  4. [pnzabi_gurumukhi niyuz](https://jagbani.punjabkesari.in/)
+  5. [Telugu niyuz](https://telugu.oneindia.com/)
+  5. [kannada niyuz](https://kannada.oneindia.com)
+  6. [bNgali_baNgla](https://bengali.oneindia.com)
+  7. [guzraTi niyuz](https://gujarati.oneindia.com)
+  8. [urriya niyuz](https://odia.oneindia.com)
+
 
 made with help of the awesome [web-extension-starter](https://github.com/abhijithvijayan/web-extension-starter).
 
