@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ztr",
-  "version": "3.0.1",
+  "version": "1.0.1",
   "icons": { "16": "assets/icons/favicon-16.png", "32": "assets/icons/favicon-32.png", "48": "assets/icons/favicon-48.png", "128": "assets/icons/favicon-128.png" },
   "description": "transliterator phur hindi bengali punjabi guzrati malayalam telugu tamil kannada oriya.",
   "homepage_url": "https://gitlab.com/zava810/ztr",

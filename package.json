@@ -1,6 +1,6 @@
 {
   "name": "ztr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "transliterator phur hindi bengali punjabi guzrati malayalam telugu tamil kannada oriya ",
   "private": true,
   "main": "src/scripts/background.js",
