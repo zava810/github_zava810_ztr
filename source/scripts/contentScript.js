@@ -1,10 +1,15 @@
 import browser from 'webextension-polyfill';
 import transliterator from 'libindik-transliteration';
 import Tooltip from './tooltip.js';
+import zabc_dikt from './zabc.js';
 import '../styles/contentStyle.scss';
 console.log("aa");
-var t, transliterated_webpage = false, observer = null, overlay = false;
-function transliterate(input) { return t.transliterate_indik_abc(input); }
+var t, transliterated_webpage = false ,observer = null, overlay = false ;
+
+function transliterate(input) {
+  console.log("in transliterate");
+  return t.transliterate_indik_abc(input, zabc_dikt);
+}
 function transliterate_elem_content(elem) {
   var nodes = [], text = "", node,
     nodeIterator = elem.ownerDocument.createNodeIterator( elem, NodeFilter.SHOW_TEXT,
@@ -31,6 +36,7 @@ function detectMob() {
 }
 function transliterate_webpage() {
   t = new transliterator();
+  // zabc_dikt = new zabc();
   transliterate_elem_content(document.body);
   if (overlay && !detectMob()) {
     let onMouseOver = async (e) => { Tooltip.init('oriznl_yunikod'); document.removeEventListener('mouseover', onMouseOver); }

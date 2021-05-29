@@ -1,4 +1,4 @@
-# ztr
+# ztr (git clone cmd : git clone https://gitlab.com/zava810/ztr.git)
 
 a simple webextension to transliterate webpages from indic script (malayalam, hindi, kannada, tamil, telugu, punzabi, guzrati, marathi, bengali/baNgla/oriya) to zabc (hscii810).
 

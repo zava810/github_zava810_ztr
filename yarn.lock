@@ -4919,10 +4919,10 @@
     "prelude-ls" "^1.2.1"
     "type-check" "~0.4.0"
 
-"libindik-transliteration@^1.2.11":
-  "integrity" "sha512-frgLxuXvTnJPkp9sfJWwX/S+puGoABxVQVhCFlrZtifz2XQXBylW4auiB2IFR/Uoy2RZMUo1sVWwX30MqJ/YXg=="
-  "resolved" "https://registry.npmjs.org/libindik-transliteration/-/libindik-transliteration-1.2.11.tgz"
-  "version" "1.2.11"
+"libindik-transliteration@^1.2.12":
+  "integrity" "sha512-A77znnPoxQlolxmXc5AGixS2LjmID6QpVYibULQMqerERyJl7Ao9Hw/7DQA94MD0aw2t5Cxsrhk0fshMwHq88g=="
+  "resolved" "https://registry.npmjs.org/libindik-transliteration/-/libindik-transliteration-1.2.12.tgz"
+  "version" "1.2.12"
 
 "line-column@^1.0.2":
   "integrity" "sha1-0lryk2tvSEkXKzEuR5LR2Ye8NKI="
